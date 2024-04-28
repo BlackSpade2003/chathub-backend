@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const port = process.env.PORT || 4000;
 const { default: axios } = require("axios");
 
 const app = express();
@@ -20,4 +21,6 @@ app.post("/authenticate", async (req,res) => {
     }
 });
 
-app.listen(9999);
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
